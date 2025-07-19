@@ -8,6 +8,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title ? `${title} | My Blog` : 'My Blog'}</title>
     <slot name="head" />
+    <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
   <body>
     <header class="main-header">
@@ -23,12 +24,42 @@ const { title } = Astro.props;
     <div class="layout-container">
       <aside class="sidebar">
         <nav class="sidebar-nav">
-          <!-- Sidebar links will go here -->
-          <a href="/blog/first-post">First Post</a>
-          <a href="/blog/second-post">Second Post</a>
-          <a href="/blog/third-post">Third Post</a>
-          <a href="/blog/markdown-style-guide">Markdown Guide</a>
-          <a href="/blog/using-mdx">Using MDX</a>
+          <ul>
+            <li>
+              <span class="sidebar-category">Java Tutorials</span>
+              <ul>
+                <li><a href="/blog/first-post">First Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+                <li><a href="/blog/second-post">Second Post</a></li>
+              </ul>
+            </li>
+            <li>
+              <span class="sidebar-category">Guides</span>
+              <ul>
+                <li><a href="/blog/markdown-style-guide">Markdown Guide</a></li>
+                <li><a href="/blog/using-mdx">Using MDX</a></li>
+              </ul>
+            </li>
+          </ul>
         </nav>
       </aside>
       <main class="main-content">

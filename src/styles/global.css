@@ -55,23 +55,47 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   margin-right: 2rem;
   padding: 1.5rem 1rem;
-  height: fit-content;
+  height: 70vh;              /* Set a max height */
+  max-height: 80vh;
+  overflow-y: auto;          /* Make it scrollable */
   position: sticky;
   top: 5.5rem;
 }
-.sidebar-nav {
-  display: flex;
-  flex-direction: column;
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
+.sidebar-nav > ul > li {
+  margin-bottom: 1.2rem;
+}
+
+.sidebar-category {
+  font-weight: bold;
+  color: #1a73e8;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.sidebar-nav ul ul {
+  margin-left: 1rem;
+  border-left: 2px solid #e3f0fd;
+  padding-left: 0.7rem;
+}
+
 .sidebar-nav a {
   color: #1a73e8;
   text-decoration: none;
-  padding: 0.5rem 0.75rem;
+  padding: 0.3rem 0.5rem;
   border-radius: 4px;
-  margin-bottom: 0.5rem;
+  display: block;
+  margin-bottom: 0.2rem;
   font-weight: 500;
   transition: background 0.2s, color 0.2s;
 }
+
 .sidebar-nav a:hover {
   background: #e3f0fd;
   color: #0b47a1;
