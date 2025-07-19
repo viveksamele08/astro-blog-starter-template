@@ -1,0 +1,45 @@
+---
+// Props: title (string), children (slot)
+const { title } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title ? `${title} | My Blog` : 'My Blog'}</title>
+    <slot name="head" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-content">
+        <div class="logo">MyBlog</div>
+        <nav class="main-nav">
+          <a href="/">Home</a>
+          <a href="/blog">Blog</a>
+          <a href="/about">About</a>
+        </nav>
+      </div>
+    </header>
+    <div class="layout-container">
+      <aside class="sidebar">
+        <nav class="sidebar-nav">
+          <!-- Sidebar links will go here -->
+          <a href="/blog/first-post">First Post</a>
+          <a href="/blog/second-post">Second Post</a>
+          <a href="/blog/third-post">Third Post</a>
+          <a href="/blog/markdown-style-guide">Markdown Guide</a>
+          <a href="/blog/using-mdx">Using MDX</a>
+        </nav>
+      </aside>
+      <main class="main-content">
+        <slot />
+      </main>
+    </div>
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div>Contact: your@email.com</div>
+        <div>© {new Date().getFullYear()} MyBlog. All rights reserved.</div>
+      </div>
+    </footer>
+  </body>
+</html> 
