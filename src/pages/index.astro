@@ -2,5 +2,27 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 <MainLayout title="Home">
-  <!-- page content -->
+  <article>
+    <h1>Welcome to My Blog</h1>
+    <div class="content-meta">
+      <span class="date">Latest Updates</span>
+      <span class="author">By Admin</span>
+    </div>
+    <div class="content-body">
+      <p>Welcome to our blog! This is a modern, responsive blog built with Astro and deployed on Cloudflare Workers.</p>
+      
+      <h2>Features</h2>
+      <ul>
+        <li><strong>Collapsible Sidebar:</strong> Navigate through categories with expandable sections</li>
+        <li><strong>Single Page Application:</strong> Content loads dynamically without page refreshes</li>
+        <li><strong>Modern Design:</strong> Clean, responsive layout with smooth animations</li>
+        <li><strong>Fast Performance:</strong> Optimized for speed and user experience</li>
+      </ul>
+      
+      <h2>Getting Started</h2>
+      <p>Use the sidebar navigation to explore our content. Click on any category to expand it and see the available posts. Click on any post title to load its content in the main area.</p>
+      
+      <p>The blog features a collapsible Java Tutorials section and a Guides section, both of which can be expanded or collapsed for better navigation.</p>
+    </div>
+  </article>
 </MainLayout>

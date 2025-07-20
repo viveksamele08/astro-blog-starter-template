@@ -1,6 +1,7 @@
 ---
 // Props: title (string), children (slot)
 const { title } = Astro.props;
+import '../styles/global.css';
 ---
 <html lang="en">
   <head>
@@ -8,7 +9,6 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title ? `${title} | My Blog` : 'My Blog'}</title>
     <slot name="head" />
-    <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
   <body>
     <header class="main-header">
