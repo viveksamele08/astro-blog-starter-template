@@ -14,6 +14,9 @@ import '../styles/global.css';
     <header class="main-header">
       <div class="header-content">
         <div class="logo">MyBlog</div>
+         <a href="/">
+            <img src="/logo.png" alt="MyBlog Logo" class="logo-img"  />
+          </a>
         <nav class="main-nav">
           <a href="/" class="nav-link">Home</a>
           <a href="/blog" class="nav-link">Blog</a>
@@ -132,6 +135,16 @@ import '../styles/global.css';
         const contentLinks = document.querySelectorAll('.content-link');
         console.log('Found content links:', contentLinks.length);
         
+        function setActiveLink(href) {
+          contentLinks.forEach(link => {
+            if (link.getAttribute('href') === href) {
+              link.classList.add('active-link');
+            } else {
+              link.classList.remove('active-link');
+            }
+          });
+        }
+
         contentLinks.forEach(link => {
           link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -139,6 +152,7 @@ import '../styles/global.css';
             const title = this.getAttribute('data-title');
             
             console.log('Content link clicked:', href, title);
+            setActiveLink(href);
             loadContent(href, title);
           });
         });
@@ -163,7 +177,7 @@ import '../styles/global.css';
                 <h1>${title}</h1>
                 <div class="content-meta">
                   <span class="date">${new Date().toLocaleDateString()}</span>
-                  <span class="author">By Admin</span>
+                  <span class="author">By Vivek</span>
                 </div>
                 <div class="content-body">
                   <p>This is the content for <strong>${title}</strong>. The content would be loaded from the server at <code>${url}</code>.</p>
@@ -194,6 +208,7 @@ import '../styles/global.css';
         // Handle browser back/forward buttons
         window.addEventListener('popstate', function(event) {
           if (event.state) {
+            setActiveLink(event.state.url);
             loadContent(event.state.url, event.state.title);
           }
         });
