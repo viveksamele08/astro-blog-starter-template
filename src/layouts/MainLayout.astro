@@ -15,9 +15,9 @@ const { title } = Astro.props;
       <div class="header-content">
         <div class="logo">MyBlog</div>
         <nav class="main-nav">
-          <a href="/">Home</a>
-          <a href="/blog">Blog</a>
-          <a href="/about">About</a>
+          <a href="/" class="nav-link">Home</a>
+          <a href="/blog" class="nav-link">Blog</a>
+          <a href="/about" class="nav-link">About</a>
         </nav>
       </div>
     </header>
@@ -26,44 +26,66 @@ const { title } = Astro.props;
         <nav class="sidebar-nav">
           <ul>
             <li>
-              <span class="sidebar-category">Java Tutorials</span>
-              <ul>
-                <li><a href="/blog/first-post">First Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
-                <li><a href="/blog/second-post">Second Post</a></li>
+              <div class="sidebar-category-container">
+                <span class="sidebar-category">Java Tutorials</span>
+                <button class="collapse-toggle" data-category="java-tutorials" aria-label="Toggle Java Tutorials">
+                  <svg class="toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <ul class="category-list" id="java-tutorials">
+                <li><a href="/blog/first-post" class="content-link" data-title="First Post">First Post</a></li>
+                <li><a href="/blog/second-post" class="content-link" data-title="Second Post">Second Post</a></li>
+                <li><a href="/blog/third-post" class="content-link" data-title="Third Post">Third Post</a></li>
+                <li><a href="/blog/fourth-post" class="content-link" data-title="Fourth Post">Fourth Post</a></li>
+                <li><a href="/blog/fifth-post" class="content-link" data-title="Fifth Post">Fifth Post</a></li>
+                <li><a href="/blog/sixth-post" class="content-link" data-title="Sixth Post">Sixth Post</a></li>
+                <li><a href="/blog/seventh-post" class="content-link" data-title="Seventh Post">Seventh Post</a></li>
+                <li><a href="/blog/eighth-post" class="content-link" data-title="Eighth Post">Eighth Post</a></li>
+                <li><a href="/blog/ninth-post" class="content-link" data-title="Ninth Post">Ninth Post</a></li>
+                <li><a href="/blog/tenth-post" class="content-link" data-title="Tenth Post">Tenth Post</a></li>
+                <li><a href="/blog/eleventh-post" class="content-link" data-title="Eleventh Post">Eleventh Post</a></li>
+                <li><a href="/blog/twelfth-post" class="content-link" data-title="Twelfth Post">Twelfth Post</a></li>
+                <li><a href="/blog/thirteenth-post" class="content-link" data-title="Thirteenth Post">Thirteenth Post</a></li>
+                <li><a href="/blog/fourteenth-post" class="content-link" data-title="Fourteenth Post">Fourteenth Post</a></li>
+                <li><a href="/blog/fifteenth-post" class="content-link" data-title="Fifteenth Post">Fifteenth Post</a></li>
+                <li><a href="/blog/sixteenth-post" class="content-link" data-title="Sixteenth Post">Sixteenth Post</a></li>
+                <li><a href="/blog/seventeenth-post" class="content-link" data-title="Seventeenth Post">Seventeenth Post</a></li>
+                <li><a href="/blog/eighteenth-post" class="content-link" data-title="Eighteenth Post">Eighteenth Post</a></li>
+                <li><a href="/blog/nineteenth-post" class="content-link" data-title="Nineteenth Post">Nineteenth Post</a></li>
+                <li><a href="/blog/twentieth-post" class="content-link" data-title="Twentieth Post">Twentieth Post</a></li>
+                <li><a href="/blog/twenty-first-post" class="content-link" data-title="Twenty-First Post">Twenty-First Post</a></li>
+                <li><a href="/blog/twenty-second-post" class="content-link" data-title="Twenty-Second Post">Twenty-Second Post</a></li>
+                <li><a href="/blog/twenty-third-post" class="content-link" data-title="Twenty-Third Post">Twenty-Third Post</a></li>
+                <li><a href="/blog/twenty-fourth-post" class="content-link" data-title="Twenty-Fourth Post">Twenty-Fourth Post</a></li>
               </ul>
             </li>
             <li>
-              <span class="sidebar-category">Guides</span>
-              <ul>
-                <li><a href="/blog/markdown-style-guide">Markdown Guide</a></li>
-                <li><a href="/blog/using-mdx">Using MDX</a></li>
+              <div class="sidebar-category-container">
+                <span class="sidebar-category">Guides</span>
+                <button class="collapse-toggle" data-category="guides" aria-label="Toggle Guides">
+                  <svg class="toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <ul class="category-list" id="guides">
+                <li><a href="/blog/markdown-style-guide" class="content-link" data-title="Markdown Style Guide">Markdown Guide</a></li>
+                <li><a href="/blog/using-mdx" class="content-link" data-title="Using MDX">Using MDX</a></li>
               </ul>
             </li>
           </ul>
         </nav>
       </aside>
-      <main class="main-content">
-        <slot />
+      <main class="main-content" id="main-content">
+        <div id="content-container">
+          <slot />
+        </div>
+        <div id="loading-spinner" class="loading-spinner" style="display: none;">
+          <div class="spinner"></div>
+          <p>Loading content...</p>
+        </div>
       </main>
     </div>
     <footer class="main-footer">
@@ -72,5 +94,110 @@ const { title } = Astro.props;
         <div>© {new Date().getFullYear()} MyBlog. All rights reserved.</div>
       </div>
     </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded, setting up SPA functionality');
+        
+        // Add click event listeners to all collapse toggle buttons
+        const toggleButtons = document.querySelectorAll('.collapse-toggle');
+        console.log('Found toggle buttons:', toggleButtons.length);
+        
+        toggleButtons.forEach(button => {
+          button.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Toggle button clicked');
+            
+            const categoryId = this.getAttribute('data-category');
+            const categoryList = document.getElementById(categoryId);
+            const toggleIcon = this.querySelector('.toggle-icon');
+            
+            console.log('Category ID:', categoryId);
+            console.log('Category list found:', !!categoryList);
+            console.log('Current collapsed state:', categoryList.classList.contains('collapsed'));
+            
+            if (categoryList.classList.contains('collapsed')) {
+              categoryList.classList.remove('collapsed');
+              toggleIcon.style.transform = 'rotate(0deg)';
+              console.log('Expanded category');
+            } else {
+              categoryList.classList.add('collapsed');
+              toggleIcon.style.transform = 'rotate(-90deg)';
+              console.log('Collapsed category');
+            }
+          });
+        });
+
+        // Add click event listeners to all content links
+        const contentLinks = document.querySelectorAll('.content-link');
+        console.log('Found content links:', contentLinks.length);
+        
+        contentLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            const title = this.getAttribute('data-title');
+            
+            console.log('Content link clicked:', href, title);
+            loadContent(href, title);
+          });
+        });
+
+        // Function to load content
+        function loadContent(url, title) {
+          const contentContainer = document.getElementById('content-container');
+          const loadingSpinner = document.getElementById('loading-spinner');
+          
+          // Show loading spinner
+          contentContainer.style.display = 'none';
+          loadingSpinner.style.display = 'block';
+          
+          // Update page title
+          document.title = title ? `${title} | My Blog` : 'My Blog';
+          
+          // Simulate content loading (replace with actual fetch)
+          setTimeout(() => {
+            // For demo purposes, we'll show a placeholder content
+            const content = `
+              <article>
+                <h1>${title}</h1>
+                <div class="content-meta">
+                  <span class="date">${new Date().toLocaleDateString()}</span>
+                  <span class="author">By Admin</span>
+                </div>
+                <div class="content-body">
+                  <p>This is the content for <strong>${title}</strong>. The content would be loaded from the server at <code>${url}</code>.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <h2>Subsection</h2>
+                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <ul>
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                    <li>Feature 3</li>
+                  </ul>
+                  <p>This content is loaded dynamically without page navigation, providing a smooth single-page application experience.</p>
+                </div>
+              </article>
+            `;
+            
+            contentContainer.innerHTML = content;
+            contentContainer.style.display = 'block';
+            loadingSpinner.style.display = 'none';
+            
+            // Update URL without page reload
+            window.history.pushState({ title, url }, title, url);
+            
+            console.log('Content loaded successfully');
+          }, 500);
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function(event) {
+          if (event.state) {
+            loadContent(event.state.url, event.state.title);
+          }
+        });
+      });
+    </script>
   </body>
 </html> 
